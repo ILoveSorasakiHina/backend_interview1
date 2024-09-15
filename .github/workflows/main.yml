@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -16,19 +16,13 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.11
-      
+
       - name: Install dependencies
         run: |
           python -m venv venv
-          .\venv\Scripts\activate
-          pip install -r requirements.txt
-          pip install coverage
-        shell: bash
+          venv\Scripts\activate && pip install -r requirements.txt && pip install coverage
 
       - name: Run tests with coverage
         run: |
-          .\venv\Scripts\activate
-          coverage run manage.py test
-          coverage report
-        shell: bash
-        working-directory: ./hw
+          venv\Scripts\activate && coverage run manage.py test && coverage report
+        working-directory: ./gre
