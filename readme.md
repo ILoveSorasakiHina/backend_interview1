@@ -212,7 +212,7 @@ coverage report
             CREATE INDEX idx_orders_currency_created_at ON orders(currency, created_at);
             CREATE INDEX idx_orders_bnb_id ON orders(bnb_id);
         ```
-        2. 分區表:就年份或月份對order進行分區，加快查找速度。
+        2. 分區表:就年份或月份對order分區，加快查找速度。
 
 
 
