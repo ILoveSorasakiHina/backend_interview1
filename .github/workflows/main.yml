@@ -25,4 +25,4 @@ jobs:
       - name: Run tests with coverage
         run: |
           venv\Scripts\activate && coverage run manage.py test && coverage report
-        working-directory: hw
+        working-directory: ./hw
