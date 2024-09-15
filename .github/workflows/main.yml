@@ -21,6 +21,7 @@ jobs:
         run: |
           python -m venv venv
           venv\Scripts\activate && pip install -r requirements.txt && pip install coverage
+          working-directory: ./hw
 
       - name: Run tests with coverage
         run: |
