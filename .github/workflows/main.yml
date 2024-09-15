@@ -18,10 +18,10 @@ jobs:
           python-version: 3.11
 
       - name: Install dependencies
+        working-directory: ./hw
         run: |
           python -m venv venv
           venv\Scripts\activate && pip install -r requirements.txt && pip install coverage
-          working-directory: ./hw
 
       - name: Run tests with coverage
         run: |
